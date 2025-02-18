@@ -26,5 +26,5 @@ variable "db_username" {
 }
 
 variable "db_password" {
-  description = "@GODwill43"
+  description = "@Dbpassword43"
 }
