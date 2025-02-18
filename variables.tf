@@ -1,6 +1,6 @@
 variable "aws_region" {
   description = "AWS region"
-  default     = "us-east-1"
+  default     = "ap-south-1"
 }
 
 variable "ami_id" {
@@ -22,9 +22,9 @@ variable "db_name" {
 }
 
 variable "db_username" {
-  description = "Database username"
+  description = "admin"
 }
 
 variable "db_password" {
-  description = "Database password"
+  description = "@GODwill43"
 }
