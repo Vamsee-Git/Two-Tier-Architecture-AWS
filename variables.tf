@@ -31,5 +31,5 @@ variable "db_password" {
 }
 
 variable "ami_id" {
-  default = "ami-00bb6a80f01f03502"  # Replace with a valid AMI ID (e.g., Amazon Linux)
+  default = "ami-0ddfba243cbee3768"  # Replace with a valid AMI ID (e.g., Amazon Linux)
 }
