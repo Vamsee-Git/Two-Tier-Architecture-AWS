@@ -8,7 +8,7 @@ resource "aws_subnet" "public" {
 
 resource "aws_subnet" "private" {
   count = 2
-  vpc_id = var.vpc_id
+  vpc_id =  module.vpc.vpc_id
   cidr_block = cidrsubnet("10.0.0.0/16", 4, count.index + 2)
   availability_zone = element(data.aws_availability_zones.available.names, count.index)
 }
