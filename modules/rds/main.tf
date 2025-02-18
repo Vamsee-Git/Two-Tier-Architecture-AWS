@@ -6,8 +6,8 @@ resource "aws_db_instance" "main" {
   username          = var.db_username
   password          = var.db_password
   allocated_storage = 20
-  db_subnet_group_name = var.db_subnet_group_name
-  security_groups   = [var.security_group_id]
+  db_subnet_group_name = module.subnet.private_subnet_ids
+  security_groups   = [module.security_groups.db_sg_id]
 }
 
 output "endpoint" {
