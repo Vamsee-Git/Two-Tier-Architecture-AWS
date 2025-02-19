@@ -295,4 +295,19 @@ resource "aws_db_subnet_group" "main" {
     Name = "MySQL DB Subnet Group"
   }
 }
-
+# DynamoDB table for state locking
+resource "aws_dynamodb_table" "terraform_state_lock" {
+  name         = "terraform-state-lock"  # Unique table name
+  billing_mode = "PAY_PER_REQUEST"  # No need to manage capacity manually
+ 
+  hash_key     = "LockID"  # The primary key for DynamoDB, which Terraform uses for state locking
+ 
+  attribute {
+    name = "LockID"
+    type = "S"  # String type
+  }
+ 
+  tags = {
+    Name = "Terraform State Lock"
+  }
+}
