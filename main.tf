@@ -283,6 +283,7 @@ resource "aws_db_instance" "mysql_db" {
   vpc_security_group_ids = [aws_security_group.web_sg.id]  # Attach security group
   backup_retention_period = 7  # Retain backups for 7 days
   availability_zone     = "ap-south-1a"  # Set to match your region/availability zone
+  skip_final_snapshot = true
   tags = {
     Name = "MySQL-Database"
   }
