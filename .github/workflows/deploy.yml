@@ -55,9 +55,16 @@ jobs:
  
       # Step 7: Generate Terraform Documentation (Markdown)
       - name: Generate Markdown with Terraform Docs
-        run: |
-          terraform-docs markdown . > README.md
         if: github.event_name == 'push' || github.event_name == 'pull_request'
+        uses: terraform-docs/gh-actions@v1.3.0
+        with:
+          working-dir: ./
+          output-file: README.md
+          output-method: inject
+          git-push: true
+          config-file: .terraform-docs.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
  
       # Step 8: Track Large Files with Git LFS
       - name: Track Large Files with Git LFS
