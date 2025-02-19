@@ -59,18 +59,21 @@ jobs:
           terraform-docs markdown . > README.md
         if: github.event_name == 'push' || github.event_name == 'pull_request'
  
-      # Step 8: Commit and Push Terraform Docs (Optional for review) 
-      - name: Commit and Push Terraform Docs
+      # Step 8: Track Large Files with Git LFS
+      - name: Track Large Files with Git LFS
+        run: |
+          git lfs track "usecase1/.terraform/providers/registry.terraform.io/hashicorp/aws/5.87.0/linux_amd64/terraform-provider-aws_v5.87.0_x5"
+          git add .gitattributes  # Make sure to add the .gitattributes file that git-lfs uses
+
+      # Step 9: Commit Changes (If Needed)
+      - name: Commit Changes (if any)
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add README.md plan.tfplan # Add necessary files
-          git status # Show files to be committed for debugging
-          git commit -m "Update Terraform Docs" || echo "No changes to commit" # Handle case where no changes are found
-          git push origin ${{ github.ref }} # Push changes
+          git commit -m "Add Terraform provider binary to Git LFS" || echo "No changes to commit"
  
  
-      # Step 9: Apply Terraform Configuration (when PR is merged)
+      # Step 10: Apply Terraform Configuration (when PR is merged)
       - name: Apply Terraform Configuration on PR Merge
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
