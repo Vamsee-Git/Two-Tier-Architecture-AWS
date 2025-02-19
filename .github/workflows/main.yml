@@ -32,4 +32,4 @@ jobs:
         run: terraform plan -lock=false
  
       - name: Apply Terraform Changes
-        run: terraform apply -auto-approve
+        run: terraform apply -lock=false -auto-approve
