@@ -122,7 +122,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_alb_dns_name"></a> [alb\_dns\_name](#output\_alb\_dns\_name) | Outputs for ALB DNS Name |
+| <a name="output_alb_dns_name"></a> [alb\_dns\_name](#output\_alb\_dns\_name) | Outputs for ALB DNS Name. |
 | <a name="output_rds_endpoint"></a> [rds\_endpoint](#output\_rds\_endpoint) | Outputs for RDS Instance Endpoint. |
 | <a name="output_web_server_1_public_ip"></a> [web\_server\_1\_public\_ip](#output\_web\_server\_1\_public\_ip) | n/a |
 | <a name="output_web_server_2_public_ip"></a> [web\_server\_2\_public\_ip](#output\_web\_server\_2\_public\_ip) | n/a |
