@@ -287,7 +287,6 @@ resource "aws_db_instance" "mysql_db" {
     Name = "MySQL-Database"
   }
 }
- 
 # DB Subnet Group (Required for RDS)
 resource "aws_db_subnet_group" "main" {
   name        = "mysql-db-subnet-group"
@@ -296,3 +295,4 @@ resource "aws_db_subnet_group" "main" {
     Name = "MySQL DB Subnet Group"
   }
 }
+
