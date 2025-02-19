@@ -29,7 +29,7 @@ jobs:
         run: terraform init
  
       - name: Plan Terraform Changes
-        run: terraform plan
+        run: terraform plan -lock=false
  
       - name: Apply Terraform Changes
         run: terraform apply -auto-approve
