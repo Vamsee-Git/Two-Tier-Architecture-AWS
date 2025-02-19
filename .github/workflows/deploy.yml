@@ -107,6 +107,5 @@ jobs:
       - name: Applying Terraform after PR Merge
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
-          cd ./usecase1
           terraform init
           terraform apply -auto-approve -lock=false
