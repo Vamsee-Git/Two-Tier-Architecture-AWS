@@ -101,7 +101,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           header: "Terraform Documentation "
-          path: "./README.md"
+          path: "README.md"
 
       # Step 12: Apply Terraform Changes on PR Merge
       - name: Applying Terraform after PR Merge
