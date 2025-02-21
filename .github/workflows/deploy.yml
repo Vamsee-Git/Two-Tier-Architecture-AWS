@@ -20,10 +20,6 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          ref: ${{ github.event.pull_request.head.ref || github.ref }}
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       # Step 2: Install Git LFS
       - name: Install Git LFS
