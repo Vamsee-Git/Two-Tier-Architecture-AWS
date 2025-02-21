@@ -1,12 +1,6 @@
-name: Deploy Terraform
+name: Deploy Infra
 
 on:
-  workflow_dispatch:
-    inputs:
-      branch:
-        description: 'Branch to deploy'
-        required: true
-        default: 'main'
   push:
     branches:
       - main
@@ -20,7 +14,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  terraform:
+  Infra-Deployment:
     runs-on: ubuntu-latest
 
     steps:
