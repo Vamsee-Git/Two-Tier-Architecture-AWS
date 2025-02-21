@@ -38,13 +38,7 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git commit -m "Add Terraform provider binary to Git LFS" || echo "No changes to commit"
-
-      # Step 5: Push Changes to GitHub
-      - name: Push Changes
-        run: |
-          git push origin ${{ github.event.pull_request.head.ref || github.ref }}
-
-      
+ 
       # Step 6: Configure AWS Credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
