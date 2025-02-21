@@ -10,7 +10,7 @@ output "rds_endpoint" {
   value = aws_db_instance.mysql_db.endpoint
 }
  
-# Outputs for ALB DNS Name.
+# Outputs for ALB DNS
 output "alb_dns_name" {
   value = aws_lb.web_alb.dns_name
 }
